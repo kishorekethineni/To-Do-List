@@ -12,9 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class fragment1 extends Fragment {
     ViewFlipper vp;
 
@@ -36,8 +33,6 @@ CardView cv2,cv3,cv4,cv5,cv6;
         cv4=v.findViewById(R.id.cv4);
         cv5=v.findViewById(R.id.cv5);
         cv6=v.findViewById(R.id.cv6);
-
-
         cv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

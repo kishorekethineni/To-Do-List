@@ -50,7 +50,7 @@ public class contactus extends android.support.v4.app.Fragment {
                 String message   = your_message.getText().toString();
                 if (TextUtils.isEmpty(name)){
                     your_name.setError("Enter Your Name");
-                    your_name.requestFocus();
+
                     return;
                 }
 
@@ -77,12 +77,10 @@ public class contactus extends android.support.v4.app.Fragment {
 
                 /* Fill it with Data */
                 sendEmail.setType("plain/text");
-                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"abhilashmaduris@gmail.com"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"kishorec111@gmail.com"});
                 sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
                         "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+message);
-
-                /* Send it off to the Activity-Chooser */
                 startActivity(Intent.createChooser(sendEmail, "Send mail..."));
 
 

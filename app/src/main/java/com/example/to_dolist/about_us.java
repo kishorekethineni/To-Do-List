@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -18,13 +19,13 @@ public class about_us extends android.support.v4.app.Fragment {
 
     View v;
 
-    Button follow;
+    TextView follow;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v=inflater.inflate(R.layout.fragment_about_us, container, false);
-        follow=(Button)v.findViewById(R.id.followme);
+        follow=(TextView)v.findViewById(R.id.followme);
         follow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -73,7 +73,7 @@ public class passwordchange extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
                                             Toast.makeText(passwordchange.this, "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
-                                            signOut();
+                                           // signOut();
                                             progressBar.setVisibility(View.GONE);
                                         } else {
                                             Toast.makeText(passwordchange.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
@@ -98,8 +98,6 @@ public class passwordchange extends AppCompatActivity {
         public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user == null) {
-                // user auth state is changed - user is null
-                // launch login activity
                 startActivity(new Intent(passwordchange.this, login.class));
                 finish();
             }
@@ -107,11 +105,10 @@ public class passwordchange extends AppCompatActivity {
         }
     };
 
-    //sign out method
+    /*//sign out method
     public void signOut()
     {
         auth.signOut();
-// this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -124,7 +121,7 @@ public class passwordchange extends AppCompatActivity {
                 }
             }
         };
-    }
+    }*/
 
     @Override
     protected void onResume()

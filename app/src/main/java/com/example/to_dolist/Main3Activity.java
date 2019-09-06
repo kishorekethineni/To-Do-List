@@ -67,16 +67,11 @@ public class Main3Activity extends AppCompatActivity {
         });
     }
     private void setAlarm(long time) {
-        //getting the alarm manager
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        //creating a new intent specifying the broadcast receiver
         Intent i = new Intent(this, MyAlarm.class);
-
-        //creating a pending intent using the intent
         PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
         am.setRepeating(AlarmManager.RTC, time, AlarmManager.INTERVAL_DAY, pi);
-        //setting the repeating alarm that will be fired every day
         Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show();
     }
 

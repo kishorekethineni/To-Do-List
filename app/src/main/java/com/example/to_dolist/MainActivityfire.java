@@ -136,15 +136,13 @@ public class MainActivityfire extends AppCompatActivity {
         public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             if (user == null) {
-                // user auth state is changed - user is null
-                // launch login activity
                 startActivity(new Intent(MainActivityfire.this, login.class));
                 finish();
             }
             else
              {
                 setDataToView(user);
-            }
+             }
         }
     };
 
@@ -152,14 +150,11 @@ public class MainActivityfire extends AppCompatActivity {
     public void signOut()
     {
         auth.signOut();
-// this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
                     startActivity(new Intent(MainActivityfire.this, login.class));
                     finish();
                 }
@@ -190,9 +185,4 @@ public class MainActivityfire extends AppCompatActivity {
         }
     }
 }
-
-// and yesss we have made it. WE HAVE MADE AN APP WITH LOGIN AND REGISTRATION
-// PLEASE DO LIKE AND SUBSCRIBE FOR MORE.
-//THANK YOU
-
 
